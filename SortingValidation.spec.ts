@@ -46,3 +46,6 @@ test("validate sorting based on price(high-low)",async({page})=>{
 
 
 })
+test.afterAll(async () => {
+    console.log("All sorting Validation tests completed");
+})
