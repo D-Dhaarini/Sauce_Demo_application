@@ -5,6 +5,27 @@ test.describe("Visual Testing of the pages", () => {
         await page.goto("https://www.saucedemo.com/");
         const home = await page.screenshot({ path: 'homepage.png', fullPage: true });
         await expect(page).toHaveScreenshot('homepage.png')
+        //Key Features and Options of toHaveScreenshot
+
+// Snapshot Generation: On the first run, it generates a reference snapshot. Subsequent runs compare against this baseline.
+
+// Custom Snapshot Name: You can specify a custom name for the snapshot:
+
+// await expect(page).toHaveScreenshot('custom-name.png');
+// Copy
+// Comparison Options: Adjust comparison thresholds like maxDiffPixels to allow minor differences:
+
+// await expect(page).toHaveScreenshot({ maxDiffPixels: 100 });
+// Copy
+// Considerations
+
+// Screenshots may vary across environments due to differences in rendering engines, OS, or hardware. For consistent results, run tests in the same environment where snapshots were generated.
+
+// Use the --update-snapshots flag to update baseline screenshots when necessary:
+
+// npx playwright test --update-snapshots
+// Copy
+// This method is ideal for ensuring visual consistency in web applications during automated testing.
         console.log("Visual Comparison of home page done")
     })
     //Product page
